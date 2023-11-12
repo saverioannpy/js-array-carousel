@@ -8,3 +8,53 @@
 
 /* COMMON */
 
+.container{
+    height: 100%;
+    background-color: palegoldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider{
+    width: 1000px;
+    height: 400px;
+    background-color: plum;
+    position: relative;
+}
+
+.slide{
+    height: 100%;
+    background-color: lightsalmon;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.slide.active{
+    display: block;
+}
+
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 999 ;
+}
+
+.arrow.left{
+    left: 15px;
+}
+
+.arrow.right{
+    right: 15px;
+}
+
+/* BODY */
+
+body{
+    height: 100vh;
+}
