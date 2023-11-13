@@ -45,22 +45,29 @@
 }
 
 .arrow{
-    color: white;
-    padding: 10px;
-    background-color: rgba(114, 110, 110, 0.5);
-    font-size: 30px;
+    color: black;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(191, 194, 207, 0.5);
+    font-size: 20px;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
     z-index: 999 ;
 }
 
-.arrow.left{
-    left: 15px;
+.arrow:hover{
+    background-color: rgba(191, 194, 207, 1);
 }
 
-.arrow.right{
-    right: 15px;
+.arrow.prev{
+    left: 50%;
+    top: 0;
+}
+
+.arrow.after{
+    left: 50%;
+    top: 100%;
 }
 
 /* BODY */

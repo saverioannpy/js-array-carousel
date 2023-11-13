@@ -20,8 +20,8 @@ const images = [ //inizializzo il mio array che mi farà da database per le mie 
 ];
 
 const slider = document.querySelector('.slider'); //mi prendo rispettivamente gli elementi slider, freccia sinistra e freccia destra
-const left = document.querySelector('.left');
-const right = document.querySelector('.right');
+const prev = document.querySelector('.prev');
+const after = document.querySelector('.after');
 
 let currentSlide = 0;
 
@@ -42,4 +42,42 @@ for( let i=0 ; i < images.length ; i++){
 
     slide.append(img);
     slider.append(slide);
+
 }
+
+    //seleziono tutte le slide creandomi così un nodo
+    const domSlides = document.querySelectorAll('.slide'); 
+    console.log(domSlides);
+
+
+    //eventi al click
+    prev.addEventListener('click', function() {
+        if(currentSlide > 0){  
+            domSlides[currentSlide].classList.remove('active'); //al click viene presa la slide corrente e le viene tolta la classe active
+            currentSlide--; //il puntato viene decrementato e passa all'immagine precedente
+            domSlides[currentSlide].classList.add('active');//all'immagine precedente viene aggiunta la classe active così da renderla l'imamgina che viene visualizzata
+            console.log(currentSlide);
+        }else{ //l'else serve a rendere il carosello circolare a ritroso
+            domSlides[currentSlide].classList.remove('active');
+            currentSlide = domSlides.length - 1;
+            domSlides[currentSlide].classList.add('active');
+            console.log(currentSlide);
+        }
+    }
+    )
+
+
+    after.addEventListener('click', function() {
+        if(currentSlide < domSlides.length - 1){
+            domSlides[currentSlide].classList.remove('active');
+            currentSlide++;
+            domSlides[currentSlide].classList.add('active');
+            console.log(currentSlide);
+        }else{
+            domSlides[currentSlide].classList.remove('active');
+            currentSlide = 0;
+            domSlides[currentSlide].classList.add('active');
+            console.log(currentSlide);
+        }
+    })
+
